@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="/admin_assets/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="/admin_assets/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="/admin_assets/libs/css/style.css">
+    <link rel="stylesheet" href="/admin_assets/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <link rel="stylesheet" href="/admin_assets/vendor/charts/chartist-bundle/chartist.css">
+    <link rel="stylesheet" href="/admin_assets/vendor/charts/morris-bundle/morris.css">
+    <link rel="stylesheet" href="/admin_assets/vendor/fonts/material-design-iconic-font/css/materialdesignicons.min.css">
+    <link rel="stylesheet" href="/admin_assets/vendor/charts/c3charts/c3.css">
+    <link rel="stylesheet" href="/admin_assets/vendor/fonts/flag-icon-css/flag-icon.min.css">
+    <title>Dashboard</title>
+</head>
+
+<body>
+    <div class="dashboard-main-wrapper">
+        
+        <div class="dashboard-header">
+            <nav class="navbar navbar-expand-lg bg-white fixed-top">
+                <a class="navbar-brand" href="/admin">Admin Dashboard</a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+            </nav>
+    </div>
+        <div class="nav-left-sidebar sidebar-dark">
+            <div class="menu-list">
+                <nav class="navbar navbar-expand-lg navbar-light">
+                    <a class="d-xl-none d-lg-none" href="#">Dashboard</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarNav">
+                        <ul class="navbar-nav flex-column">
+                            <li class="nav-divider">
+                                Menu
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/admin" >Manage News Post</a>
+                            </li>
+                            <li class="nav-item ">
+                                <a class="nav-link active" href="/admin_logout" >Logout</a>
+                            </li>
+                        </ul>
+                    </div>
+                </nav>
+            </div>
+        </div>
+        <div class="dashboard-wrapper">
+            <div class="dashboard-ecommerce">
+                <div class="container-fluid dashboard-content ">
+                    
+                    <div class="ecommerce-widget">
+                        <h2>Manage News Post</h2>
+                        <div class="row">
+                            <div class="col-md-4">
+                                <form action="/admin_add_news_post" method="post" enctype="multipart/form-data">
+                                    <label for="">Title</label>
+                                    <input type="text" class="form-control" name="title" id="title" required="">
+                                    <label for="">Picture</label>
+                                    <input type="file" class="form-control" name="img" id="img" required="">
+                                    <label for="">Detail</label>
+                                    <textarea name="detail" id="detail" cols="30" rows="2" class="form-control" required=""></textarea>
+                                    <br>
+                                    <input type="submit" value="Upload News" name="save_btn" class="btn btn-info">
+                                </form>
+                            </div>
+                            <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8 col-8">
+                                <div class="card">
+                                    <h5 class="card-header">News Posts List</h5>
+                                    <div class="card-body p-0">
+                                        <div class="table-responsive">
+                                            <table class="table">
+                                                <thead class="bg-light">
+                                                    <tr class="border-0">
+                                                        <th class="border-0">#</th>
+                                                        <th class="border-0">Title</th>
+                                                        <th class="border-0">Picture</th>
+                                                        <th class="border-0">Detail</th>
+                                                        <th class="border-0">Delete</th>
+                                                        <th class="border-0">Edit</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <% news_posts.forEach((news_post, index) => { %>
+                                                        <tr>
+                                                            <td>1</td>
+                                                            <td>
+                                                                <div class="m-r-10"><img src="/upload/news_post/<%= news_post.img %>" alt="user" class="rounded" style="width: 50px; height: 50px;;"></div>
+                                                            </td>
+                                                            <td><%= news_post.title %> </td>
+                                                            <td><%= news_post.detail %> </td>
+                                                            <td><%= news_post.create_at %></td>
+                                                            <td><a href="/admin_delete_news_post/<%= news_post.id %>" class="btn btn-danger">Delete</a></td>
+                                                            <td><a href="admin_edit_news_post/<%= news_post.id %>" class="btn btn-info">Edit</a></td>
+                                                        </tr>
+                                                   <% }) %>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        
+
+                    </div>
+                </div>
+            </div>
+            <div class="footer">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                             Copyright ©  Concept. All rights reserved. Dashboard by <a href="httsp://www.timetechsol.com">TimeTechSol</a>.
+                        </div>
+                        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                            <div class="text-md-right footer-links d-none d-sm-block">
+                                <a href="#">About</a>
+                                <a href="#">Support</a>
+                                <a href="#">Contact Us</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="/admin_assets/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="/admin_assets/vendor/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/admin_assets/vendor/slimscroll/jquery.slimscroll.js"></script>
+    <script src="/admin_assets/libs/js/main-js.js"></script>
+    <script src="/admin_assets/vendor/charts/chartist-bundle/chartist.min.js"></script>
+    <script src="/admin_assets/vendor/charts/sparkline/jquery.sparkline.js"></script>
+    <script src="/admin_assets/vendor/charts/morris-bundle/raphael.min.js"></script>
+    <script src="/admin_assets/vendor/charts/morris-bundle/morris.js"></script>
+    <script src="/admin_assets/vendor/charts/c3charts/c3.min.js"></script>
+    <script src="/admin_assets/vendor/charts/c3charts/d3-5.4.0.min.js"></script>
+    <script src="/admin_assets/vendor/charts/c3charts/C3chartjs.js"></script>
+    <script src="/admin_assets/libs/js/dashboard-ecommerce.js"></script>
+</body>
+ 
+</html>
