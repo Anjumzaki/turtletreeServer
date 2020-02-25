@@ -40,4 +40,4 @@ function handleDisconnect() {
 }
 
 handleDisconnect();
-global.db=db;
+global.db=connection;
