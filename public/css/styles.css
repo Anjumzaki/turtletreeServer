@@ -1,18 +1,18 @@
 @font-face {
   font-family: "exLight";
-  src: url("./assets/fonts/Giorgio-Sans-Extra-Light.otf");
+  src: url("../assets/fonts/Giorgio-Sans-Extra-Light.otf");
 }
 @font-face {
   font-family: "medium";
-  src: url("./assets/fonts/Giorgio-Sans-Medium.otf");
+  src: url("../assets/fonts/Giorgio-Sans-Medium.otf");
 }
 @font-face {
   font-family: "regular";
-  src: url("./assets/fonts/Giorgio-Sans-Regular.otf");
+  src: url("../assets/fonts/Giorgio-Sans-Regular.otf");
 }
 @font-face {
   font-family: "publicText";
-  src: url("./assets/fonts/PublicoText-Roman.otf");
+  src: url("../assets/fonts/PublicoText-Roman.otf");
 }
 html {
   scroll-behavior: smooth !important;
