@@ -148,6 +148,7 @@
                             </tr>
                           </thead>
                           <tbody>
+                            <% if(news_posts.length > 0) { %>
                             <% news_posts.forEach((news_post, index) => { %>
                             <tr>
                               <td>1</td>
@@ -180,6 +181,7 @@
                               </td>
                             </tr>
                             <% }) %>
+                            <% } %>
                           </tbody>
                         </table>
                       </div>
