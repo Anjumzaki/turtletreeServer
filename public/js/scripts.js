@@ -16,7 +16,7 @@ $(document).ready(function() {
   $(window).scroll(function() {
     var scrollbarLocation = $(this).scrollTop();
     scrollLink.each(function() {
-      var sectionOffset = $(this.hash).offset().top - 20;
+      var sectionOffset = $(this.hash).offset().top + 20;
       if (sectionOffset <= scrollbarLocation) {
         $(this)
           .parent()
