@@ -4,7 +4,7 @@ const file_upload=require('express-fileupload');
 const session=require('express-session');
 const cookieParser=require('cookie-parser');
 const path=require('path');
-const port=5005;
+const port = process.env.PORT || 5000;
 const app=express();
 require('./db_conn.js');
 var sess;
