@@ -329,7 +329,7 @@
           <h1 style="margin-bottom: 100px;">Media.</h1>
         </div>
         <div class="container">
-          <% if (news_posts.length) > 0 { %>
+          <% if (news_posts.length > 0) { %>
           <div class="row">
             <% news_posts.forEach((news_post, index) => {%>
             <div class="col-lg-4 col-12 teamCards" onclick="window.location='view_post/<%= news_post.id %>'">
