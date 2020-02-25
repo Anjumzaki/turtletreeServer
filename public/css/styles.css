@@ -140,6 +140,8 @@ section p {
 .teamCards .desig {
   font-family: "regular";
   font-size: 18px;
+  height: 50px;
+  overflow: hidden;
 }
 .location {
   font-family: "regular";
