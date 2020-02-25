@@ -23,6 +23,7 @@ const {admin_index_page,admin_login,admin_login_page,admin_logout,admin_delete_n
 app.get('/',index_page);
 app.get('/view_post/:id',view_post_page);
 app.get('/view_post', (req,res) => { res.redirect('/')});
+app.get('/yasir', (req,res) => { res.send('hi Yasir')});
 app.get('/admin_login',admin_login);
 app.post('/admin_login',admin_login_page);
 app.get('/admin/',admin_index_page);
