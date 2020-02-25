@@ -60,59 +60,61 @@
       </div>
     </nav>
     <div style="margin-top: 150px;"></div>
+    <div class="container">
       <div class="row">
-        <div class="col-md-8">
+        <div class="col-md-12">
           <h2><%= news_post.title %></h2>
-          <img src="/upload/news_post/<%= news_post.img %>" style="width: 100%; height: 400px;" alt="">
-          <br>
-          <h3>Description</h3>
+          <img
+            src="/upload/news_post/<%= news_post.img %>"
+            style="width: 100%; "
+            alt=""
+          />
+          <br />
           <p><%- news_post.detail %></p>
         </div>
       </div>
-    
+    </div>
 
-      <footer >
-        <div>
-          <div class="row">
-            <div class="col-lg-4 col-6">
-              <h5 class="location">Singapore</h5>
-              <div class="locaDetails">
-                <p>+1 555 555 55 55</p>
-                <p>
-                  YourInfo@example.com
-                  <br>
-                  Addresses: 123 Street, City, 
-                  <br>
-                  State 45678
-                </p>
-               
-              </div>
+    <footer>
+      <div>
+        <div class="row">
+          <div class="col-lg-4 col-6">
+            <h5 class="location">Singapore</h5>
+            <div class="locaDetails">
+              <p>+1 555 555 55 55</p>
+              <p>
+                YourInfo@example.com
+                <br />
+                Addresses: 123 Street, City,
+                <br />
+                State 45678
+              </p>
             </div>
-            <div class="col-lg-4 col-6">
-              <h5 class="location">San Francisco</h5>
-              <div class="locaDetails">
-                <p>+1 555 555 55 55</p>
-                <p>
-                  YourInfo@example.com
-                  <br>
-                  Addresses: 123 Street, City, 
-                  <br>
-                  State 45678
-                </p>
-                <p>
-                  © 2020 TTL All rights reserved
-                </p>
-              </div>
+          </div>
+          <div class="col-lg-4 col-6">
+            <h5 class="location">San Francisco</h5>
+            <div class="locaDetails">
+              <p>+1 555 555 55 55</p>
+              <p>
+                YourInfo@example.com
+                <br />
+                Addresses: 123 Street, City,
+                <br />
+                State 45678
+              </p>
+              <p>
+                © 2020 TTL All rights reserved
+              </p>
             </div>
-            <div class="col-lg-4 col-12 " style="margin:auto">
-              <div class="footerLogo">
-                <img src="./assets/images/ftLogo.png" alt="">
-              </div>
+          </div>
+          <div class="col-lg-4 col-12 " style="margin:auto">
+            <div class="footerLogo">
+              <img src="./assets/images/ftLogo.png" alt="" />
             </div>
-
           </div>
         </div>
-      </footer>
+      </div>
+    </footer>
   </body>
 
   <script
